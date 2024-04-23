@@ -16,11 +16,15 @@ namespace Autoszalon
             Terepjaro terepjaro = new Terepjaro(gyarto: "Land Rover", modell: "Defender", evjarat: 2020, alapAr: 15000000, kilometerAllas: 2000, hajtas: "4WD", offroadKepessegek: true, vontatokepesseg: 3500);
 
             autoszalon.JarmuHozzaadasa(szemelyauto);
+
             autoszalon.JarmuHozzaadasa(terepjaro);
+            Console.WriteLine(autoszalon.JarmuEladasa("Toyota", "Corolla"));
+            Jarmu jarmu = autoszalon.JarmuKeresese("Land Rover", "Defender");
+            jarmu.JarmuInfo();
 
             autoszalon.JarmuvekListazasa();
 
-
+            Console.ReadKey();
         }
     }
 }

@@ -15,9 +15,29 @@ namespace Autoszalon
             jarmuvek.Add(jarmu);
         }
 
-        public void JarmuEladasa(string gyarto, string modell)
+        public bool JarmuEladasa(string gyarto, string modell)
         {
+            foreach (var jarmu in jarmuvek)
+            {
+                if (jarmu.Gyarto == gyarto && jarmu.Modell == modell)
+                {
+                    jarmuvek.Remove(jarmu);
+                    return true;
+                }
+            }
+            return false;
+        }
 
+        public Jarmu JarmuKeresese(string gyarto, string modell)
+        {
+            foreach (var jarmu in jarmuvek)
+            {
+                if (jarmu.Gyarto == gyarto && jarmu.Modell == modell)
+                {
+                    return jarmu;
+                }
+            }
+            return null;
         }
 
         public void JarmuvekListazasa()
